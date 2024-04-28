@@ -1,0 +1,107 @@
+<div class="container">
+
+    <div class="row">
+      <h1>{{schoolDivisionName}} Daily Register</h1>
+    </div>
+    <div class="form-row" [formGroup]="dailyRegisterForm">
+      <div class="mr-2">
+        <label for="Year">Year : </label>
+        <select name="selYear" formControlName="selYear" class="form-control" (change)="changeYear($event)">
+          <option value="" selected disabled>Select Year</option>
+          <option *ngFor="let y of years">{{y}}</option>
+        </select>
+      </div>
+      <div class="mr-2">
+        <label for="Month">Month : </label>
+        <select name="selMonth" formControlName="selMonth" class="form-control" (change)="changeMonth($event)">
+          <option value="" selected disabled>Select Month</option>
+          <option *ngFor="let m of months">{{m}}</option>
+        </select>
+      </div>
+    </div>
+    <br>
+    <div id="pdfTable" #pdfTable>
+      <div class="table-container">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <!-- Add your table columns and rows here --> 
+  
+          <ng-container matColumnDef="Date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.Date | date}} </td>
+            <td mat-footer-cell *matFooterCellDef> </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="reciept_no">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Receipt No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.reciept_no}} </td>
+            <td mat-footer-cell *matFooterCellDef> </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="student_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Student Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.student_name}} </td>
+            <td mat-footer-cell *matFooterCellDef> </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="standard">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Standard </th>
+            <td mat-cell *matCellDef="let element"> {{element.standard}} </td>
+            <td mat-footer-cell *matFooterCellDef> Total </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="admission_fee">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Admission Fee </th>
+            <td mat-cell *matCellDef="let element"> {{element.admission_fee}} </td>
+            <td mat-footer-cell *matFooterCellDef>{{totalAdmissionFee}} </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="monthly_fee">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Tuition Fee </th>
+            <td mat-cell *matCellDef="let element"> {{element.monthly_fee}} </td>
+            <td mat-footer-cell *matFooterCellDef>{{totalTuitionFee}} </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="term_fee">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Term Fee </th>
+            <td mat-cell *matCellDef="let element"> {{element.term_fee}} </td>
+            <td mat-footer-cell *matFooterCellDef>{{totalTermFee}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="stationary_fee">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Stationary Fee </th>
+            <td mat-cell *matCellDef="let element"> {{element.stationary_fee}} </td>
+            <td mat-footer-cell *matFooterCellDef>{{totalStationaryFee}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="computer_fee">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Computer Fee </th>
+            <td mat-cell *matCellDef="let element"> {{element.computer_fee}} </td>
+            <td mat-footer-cell *matFooterCellDef>{{totalComputerFee}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="total_fee">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Fee </th>
+            <td mat-cell *matCellDef="let element"> {{element.monthly_fee +
+              element.term_fee+element.stationary_fee+element.computer_fee}} </td>
+            <td mat-footer-cell *matFooterCellDef>{{totalTuitionFee+totalTermFee+ totalStationaryFee+totalComputerFee}}
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky:true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-footer-row *matFooterRowDef="displayedColumns;sticky:true"></tr>
+        </table>
+  
+      </div>
+      <div class="row mt-3 ml-1">
+        <input type="button" value="Export To Excel" class="btn btn-primary" (click)="exporter.exportTable('xlsx')">
+        <!-- <input type="button" value="Export To PDF" class="btn btn-primary ml-3" (click)="downloadAsPDF()"> -->
+      </div>
+    </div>
+  </div>

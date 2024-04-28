@@ -1,0 +1,51 @@
+table {
+    width: 100%;
+  }
+.table-container{
+    height: 400px;
+    overflow-y: auto;
+}
+  /* th.mat-sort-header-sorted {
+    color: black;
+  } */
+
+  /* .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  } */
+
+  th.mat-header-cell{
+    border: solid 1px;    
+    color:black;
+    background-color: lightblue;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+  }
+ 
+  td.mat-cell{
+    border: solid 1px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+ 
+  td.mat-footer-cell{
+    border: solid 1px;    
+    color:black;
+    background-color: lightblue;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+  } 
+
+  .btn-default{ 
+    background-color: #68889E; 
+    color:#FFF; 
+}
+ 
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default { 
+    background-color: #2F3E48; 
+    color:#FFF; 
+}
+
+

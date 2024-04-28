@@ -5,7 +5,8 @@ import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { FullwidthComponent } from './fullwidth.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SharedModule } from './../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
+
 //import { LoginComponent } from 'src/app/module/login/login.component';
 //import { LoginregisterComponent } from 'src/app/module/loginregister/loginregister.component';
 
@@ -13,7 +14,7 @@ import { SharedModule } from './../../shared/shared.module';
 
 @NgModule({
   declarations: [
-    
+    FullwidthComponent
     //LoginComponent,
     //LoginregisterComponent
   ],
@@ -22,9 +23,8 @@ import { SharedModule } from './../../shared/shared.module';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule,
-    SharedModule,
-    FullwidthComponent
+    FlexLayoutModule,    
+    SharedModule
   ]
 })
 export class FullwidthModule { }

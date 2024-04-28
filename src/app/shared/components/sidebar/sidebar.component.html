@@ -1,1 +1,46 @@
-<p>sidebar works!</p>
+<nav class="navbar navbar-expand-lg ">
+    <!-- <div class="container"> -->
+        <ul class="nav flex-column nav-pills" aria-orientation="vertical">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/admin">Admin</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/fee">Fee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/student">Student</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="registersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Registers
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="registersDropdown">
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Pre Primary</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/dailyregister','Pre Primary']">Daily Register</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/cashbookregister','Pre Primary']">Cashbook Register</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/generalledger','Pre Primary']">General Ledger</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Primary</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/dailyregister','Primary']">Daily Register</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/cashbookregister','Primary']">Cashbook Register</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/generalledger','Primary']">General Ledger</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Secondary</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/dailyregister','Secondary']">Daily Register</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/cashbookregister','Secondary']">Cashbook Register</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/generalledger','Secondary']">General Ledger</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    <!-- </div> -->
+</nav>

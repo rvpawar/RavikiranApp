@@ -4,10 +4,10 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-default',
-    standalone: true,
+    //standalone: true,
     templateUrl: './default.component.html',
     styleUrl: './default.component.css',
-    imports: [SharedModule,RouterOutlet]
+    //imports: [SharedModule,RouterOutlet]
 })
 export class DefaultComponent {
 
